@@ -1,0 +1,16 @@
+{
+    "builders": [
+        {
+            "type": "amazon-ebs",
+            "region": "ap-southeast-2",
+            "source_ami": "ami-05f1bac3bdba6d300",
+            "instance_type": "t2.micro",
+            "ami_name": "windows2016Server-{{timestamp}}",
+            "user_data_file":"./scripts/bootstrap.ps1",
+            "communicator": "winrm",
+            "winrm_username": "Administrator",
+            "winrm_insecure": true,
+            "winrm_use_ssl": false
+        }
+    ]
+}
